@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../lib/post'
 import Date from '../../components/Date'
-
+import Link from 'next/link'
 
 // Add this import at the top of the file
 import utilStyles from '../../styles/utils.module.css'
@@ -19,6 +19,7 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Link href={'/'}><a>Go Home</a></Link>
       </article>
     </Layout>
   )
